@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajedrez vs Computadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="game-header">
+            <h1>♔ Ajedrez vs Computadora ♛</h1>
+            <div class="game-info">
+                <div id="game-status" class="status status--info">Tu turno - Mueves las blancas</div>
+                <div class="controls">
+                    <button id="reset-btn" class="btn btn--secondary">🔄 Nueva Partida</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="game-main">
+            <div class="board-container">
+                <div id="chess-board" class="chess-board">
+                    <!-- Las casillas se generarán con JavaScript -->
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Estado del Juego</h3>
+                        <div id="move-history" class="move-history">
+                            <p>Partida iniciada</p>
+                        </div>
+                        
+                        <div class="game-stats">
+                            <div class="stat">
+                                <span class="stat-label">Jugador:</span>
+                                <span class="stat-value">♙ Blancas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Computadora:</span>
+                                <span class="stat-value">♟ Negras</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal de fin de juego -->
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-overlay"></div>
+            <div class="modal-content card">
+                <div class="card__body">
+                    <h2 id="modal-title">¡Fin del Juego!</h2>
+                    <p id="modal-message">Mensaje del resultado</p>
+                    <div class="modal-actions">
+                        <button id="new-game-btn" class="btn btn--primary">Nueva Partida</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicador de computadora pensando -->
+        <div id="thinking-indicator" class="thinking-indicator hidden">
+            <div class="thinking-content">
+                <div class="spinner"></div>
+                <p>Computadora pensando...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
